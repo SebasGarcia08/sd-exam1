@@ -1,0 +1,18 @@
+http:
+  port: 8090
+admin:
+  port: 9876
+  host: localhost
+apiEndpoints:
+  frontend:
+    host: localhost
+    paths: ['/frontend']
+serviceEndpoints:
+  frontend:
+   url: 'http://loadbalancer/'
+policies:
+pipelines:
+  default:
+    apiEndpoints:
+      - frontend
+    policies:
